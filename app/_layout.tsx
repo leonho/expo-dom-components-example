@@ -1,9 +1,10 @@
 import { Slot, Tabs } from "expo-router";
-import { House, ShoppingCart, Package, LineChart } from "lucide-react-native";
+import { House, ShoppingCart, Package, LineChart, Wind } from "lucide-react-native";
 import { BlurView } from "expo-blur";
 import { StyleSheet } from "react-native";
 import { HapticTab } from "@/components/haptic-tab";
 import * as SplashScreen from "expo-splash-screen";
+import "@/global.css";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -55,6 +56,13 @@ export default function RootLayout() {
         options={{
           title: "Analytics",
           tabBarIcon: (props) => <LineChart {...props} />,
+        }}
+      />
+      <Tabs.Screen
+        name="(nativewind)"
+        options={{
+          title: "NativeWind",
+          tabBarIcon: (props) => <Wind {...props} />,
         }}
       />
     </Tabs>
